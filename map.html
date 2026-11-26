@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Map — Gori in Goa</title>
+<meta name="description" content="An illustrated map of South Goa with every place pinned.">
+<meta name="theme-color" content="#FFE9A9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Gori in Goa">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FFE9A9'/%3E%3Ccircle cx='16' cy='13' r='5' fill='%23FF933E'/%3E%3Cpath d='M3 24c3-3 6-3 9 0s6 3 9 0 6-3 8 0' fill='none' stroke='%2373A5CA' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
+</head>
+<body data-page="map">
+<a class="skip" href="#main">Skip to content</a>
+<header id="shell-top"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow pagehead__kick">04 · Where things are</p>
+      <h1 class="display">Map</h1>
+      <p class="lede" style="margin-top:.8rem">Hand-drawn, roughly to scale, and deliberately missing everything I don't care about. Tap a pin to see what it is.</p>
+    </div>
+  </div>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="chips" id="map-filters" role="group" aria-label="Filter the map"></div>
+
+      <div class="mapwrap">
+        <svg id="map" viewBox="0 0 1000 1240" role="img" aria-label="Illustrated map of South Goa with places pinned">
+          <defs>
+            <pattern id="waves" width="60" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+              <path d="M0 13c10-8 18-8 28 0s18 8 28 0" fill="none" stroke="#7FADC8" stroke-width="2" opacity=".38"/>
+            </pattern>
+            <pattern id="fields" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(14)">
+              <path d="M0 23h46" stroke="#FFCB56" stroke-width="2" opacity=".35" stroke-dasharray="5 9"/>
+            </pattern>
+          </defs>
+
+          <!-- sea -->
+          <rect width="1000" height="1240" fill="#E6F1F8"/>
+          <rect width="1000" height="1240" fill="url(#waves)"/>
+
+          <!-- land mass: everything east of the coastline -->
+          <path d="M300 0
+                   C292 90 252 142 242 202
+                   C236 282 246 332 250 382
+                   C256 442 260 500 262 540
+                   C252 596 214 640 198 690
+                   C182 732 202 762 216 792
+                   C202 852 190 892 186 940
+                   C182 992 190 1032 200 1082
+                   C210 1132 240 1186 302 1240
+                   L1000 1240 L1000 0 Z"
+                fill="#FFFDF8" stroke="#2C2318" stroke-opacity=".42" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M300 0
+                   C292 90 252 142 242 202
+                   C236 282 246 332 250 382
+                   C256 442 260 500 262 540
+                   C252 596 214 640 198 690
+                   C182 732 202 762 216 792
+                   C202 852 190 892 186 940
+                   C182 992 190 1032 200 1082
+                   C210 1132 240 1186 302 1240
+                   L1000 1240 L1000 0 Z"
+                fill="url(#fields)" opacity=".55"/>
+
+          <!-- beaches: sand strip along the coast -->
+          <path d="M242 202 C236 282 246 332 250 382 C256 442 260 500 262 540 C252 596 214 640 198 690 C182 732 202 762 216 792 C202 852 190 892 186 940 C182 992 190 1032 200 1082 C210 1132 240 1186 302 1240"
+                fill="none" stroke="#FFF0CB" stroke-width="26" stroke-linecap="round" opacity=".92"/>
+          <path d="M242 202 C236 282 246 332 250 382 C256 442 260 500 262 540 C252 596 214 640 198 690 C182 732 202 762 216 792 C202 852 190 892 186 940 C182 992 190 1032 200 1082 C210 1132 240 1186 302 1240"
+                fill="none" stroke="#2C2318" stroke-width="2" stroke-opacity=".3"/>
+
+          <!-- Sal river -->
+          <path d="M640 600 C560 588 480 600 420 588 C370 578 330 566 286 566"
+                fill="none" stroke="#8FBBD6" stroke-width="15" stroke-linecap="round" opacity=".9"/>
+          <path d="M640 600 C560 588 480 600 420 588 C370 578 330 566 286 566"
+                fill="none" stroke="#2C2318" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+          <text x="470" y="562" font-family="Marker Felt, Chalkboard SE, cursive" font-size="19" fill="#2A5875" transform="rotate(-4 470 562)">Sal River</text>
+
+          <!-- roads -->
+          <path d="M600 0 C584 130 566 260 528 392 C506 512 474 640 444 762 C414 884 392 1000 374 1120"
+                fill="none" stroke="#2C2318" stroke-width="2.4" stroke-dasharray="11 11" opacity=".3" stroke-linecap="round"/>
+          <path d="M250 210 C252 300 254 400 258 500 C252 600 214 690 200 790 C192 880 192 980 204 1070"
+                fill="none" stroke="#2C2318" stroke-width="2" stroke-dasharray="8 9" opacity=".3" stroke-linecap="round"/>
+          <path d="M528 392 C420 380 330 340 258 300"
+                fill="none" stroke="#2C2318" stroke-width="1.6" stroke-dasharray="7 9" opacity=".25"/>
+          <path d="M444 762 C360 800 300 850 216 900"
+                fill="none" stroke="#2C2318" stroke-width="1.6" stroke-dasharray="7 9" opacity=".25"/>
+          <path d="M374 1120 C300 1140 250 1130 200 1082"
+                fill="none" stroke="#2C2318" stroke-width="1.6" stroke-dasharray="7 9" opacity=".25"/>
+
+          <!-- town labels -->
+          <g font-family="Avenir Next, system-ui, sans-serif" font-size="21" font-weight="700" fill="#5B4835" opacity=".95">
+            <text x="556" y="410">Margao</text>
+            <text x="596" y="120">Panjim</text>
+            <text x="392" y="168">Dabolim</text>
+            <text x="330" y="700">Cabo de Rama</text>
+            <text x="246" y="862">Agonda</text>
+            <text x="236" y="1058" font-size="19">Palolem</text>
+            <text x="430" y="1100">Canacona</text>
+          </g>
+
+          <!-- sea label -->
+          <text x="86" y="640" font-family="Marker Felt, Chalkboard SE, cursive" font-size="25" letter-spacing="7" fill="#2A5875" opacity=".6" transform="rotate(-90 86 640)">ARABIAN SEA</text>
+
+          <!-- boat -->
+          <g transform="translate(96 980)">
+            <path d="M-26 0h52l-9 12h-34z" fill="#73A5CA" stroke-linejoin="round"/>
+            <path d="M0 0v-30l20 26z" fill="#FFFFFF" stroke="#2C2318" stroke-opacity=".4" stroke-width="1.6" stroke-linejoin="round"/>
+          </g>
+
+          <!-- compass -->
+          <g transform="translate(120 150)" opacity=".85">
+            <circle r="46" fill="#FFFDF8" stroke="#2C2318" stroke-opacity=".35" stroke-width="2"/>
+            <path d="M0 -34 L9 0 L0 34 L-9 0 Z" fill="#73A5CA" stroke="#2C2318" stroke-opacity=".5" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M0 -34 L0 34" stroke="#2C2318" stroke-width="1.4" opacity=".3"/>
+            <text x="0" y="-52" text-anchor="middle" font-family="Avenir Next, system-ui, sans-serif" font-size="18" font-weight="800" fill="#5B4835">N</text>
+          </g>
+
+          <!-- title badge -->
+          <g transform="translate(34 1106)">
+            <path d="M-8 0 L186 -14 L196 62 L0 78 Z" fill="#FFCB56" stroke-linejoin="round"/>
+            <text x="18" y="30" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="30" font-weight="600" fill="#3A2E22">South Goa</text>
+            <text x="20" y="56" font-family="Marker Felt, Chalkboard SE, cursive" font-size="17" fill="#5F4C39">roughly, affectionately</text>
+          </g>
+
+          <g id="pins"></g>
+        </svg>
+
+        <div class="map-legend">
+          <span><span class="swatch" style="background:#73A5CA"></span>Restaurant</span>
+          <span><span class="swatch" style="background:#FFCB56"></span>Café</span>
+          <span><span class="swatch" style="background:#D9916B"></span>Dessert</span>
+          <span><span class="swatch" style="background:#4C86A9"></span>Cocktail</span>
+          <span><span class="swatch" style="background:#FF933E"></span>Sunset</span>
+          <span><span class="swatch" style="background:#9CC0D8"></span>Drive</span>
+          <span><span class="swatch" style="background:#F2D489"></span>Gaddo</span>
+          <span><span class="swatch" style="background:#2C2318"></span>Home</span>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:1rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <div><strong>This map is for understanding, not navigating.</strong> It's a drawing, not Google Maps. For turn-by-turn, every pin has an “open in Maps” button that hands it to your phone.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h3" style="margin:0">Everything on the map</h2>
+        <a class="btn btn--ghost btn--sm" href="places.html">List view</a>
+      </div>
+      <div class="grid grid--2 grid--3" id="map-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="shell-foot"></footer>
+<div id="shell-tab"></div>
+<div id="shell-drawer"></div>
+
+<!-- pin detail sheet -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="false" aria-labelledby="sheet-title">
+  <div class="sheet__grip"></div>
+  <button class="sheet__close" id="sheet-close" aria-label="Close">✕</button>
+  <div id="sheet-body"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>
