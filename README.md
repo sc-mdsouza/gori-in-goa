@@ -2,7 +2,9 @@
 
 An orientation site for one visitor, in particular. Nine pages, no build step, no accounts, works on a phone with no signal once it's loaded.
 
-Open **`index.html`** to start.
+**Live at:** https://sc-mdsouza.github.io/gori-in-goa/
+
+Open **`index.html`** to start, or just use the link above.
 
 ![Home page](screenshots/preview-home.png)
 
