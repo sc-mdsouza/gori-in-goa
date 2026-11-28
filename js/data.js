@@ -107,8 +107,9 @@ window.GORI = {
     { id: "pentagon", name: "Pentagon", cat: "restaurant", area: "", topPick: true,
       blurb: "", tags: [] },
 
-    { id: "cavatina", name: "Cavatina", cat: "restaurant", area: "", topPick: true,
-      blurb: "", tags: [] },
+    { id: "cavatina", name: "Cavatina by Avinash Martins", cat: "restaurant", area: "Benaulim", topPick: true, top50: 23,
+      blurb: "Goan ingredients taken seriously at fine-dining pitch. The valchi bhaji with morels is the one people talk about.",
+      tags: ["Goan", "Fine dining", "Book ahead"] },
 
     { id: "cafe-tato", name: "Cafe Tato", cat: "cafe", area: "", topPick: true,
       blurb: "", tags: [] },
@@ -212,6 +213,55 @@ window.GORI = {
     { id: "gaddo-palolem", name: "Palolem main road", cat: "gaddo", area: "Palolem",
       blurb: "Shawarma, momos, doughnuts by the dozen at 11pm. Not Goan, entirely necessary.",
       tags: ["Late night", "Variety", "Cash"], map: { x: 252, y: 1046 } },
+    /* --- India's Top 50 Restaurants 2026 (Condé Nast Traveller x District) --- */
+    { id: "izumi", name: "Izumi Assagao", cat: "restaurant", area: "Assagao", top50: 6,
+      blurb: "Japanese, and the best of it — hamachi truffle ponzu, crispy nori roll, prawn yaki udon.",
+      tags: ["Japanese", "Book ahead"] },
+
+    { id: "bomras", name: "Bomras", cat: "restaurant", area: "Assagao", top50: 8,
+      blurb: "Burmese and Southeast Asian. Pickled tea leaf salad, tiger prawn ceviche, smoked pork fried rice.",
+      tags: ["Burmese"] },
+
+    { id: "second-house", name: "The Second House", cat: "restaurant", area: "Saligao", top50: 16,
+      blurb: "Contemporary and quietly confident. Butternut squash roll, eggplant hummus, togarashi beef tart.",
+      tags: ["Contemporary"] },
+
+    { id: "praca-prazeres", name: "Praça Prazeres", cat: "restaurant", area: "Panaji", top50: 18,
+      blurb: "European cooking in Fontainhas. Scotch eggs, crisp pork belly with apple sauce, fish with beurre blanc.",
+      tags: ["European", "Fontainhas"] },
+
+    { id: "larder-folk", name: "Larder + Folk", cat: "cafe", area: "", top50: 25,
+      blurb: "Casual, clever baking — the hot honey fried chicken doughnut is the thing.",
+      tags: ["Bakery", "Casual"] },
+
+    { id: "padaria-prazeres", name: "Padaria Prazeres", cat: "cafe", area: "", top50: 26,
+      blurb: "Pastel de nata, palmiers, and a European breakfast worth getting up for.",
+      tags: ["Bakery", "Breakfast"] },
+
+    { id: "hosa", name: "Hosa", cat: "restaurant", area: "Siolim", top50: 27,
+      blurb: "South Indian, reimagined — curry leaf-cured snapper in kokum rasa.",
+      tags: ["South Indian"] },
+
+    { id: "grumps", name: "Grumps", cat: "restaurant", area: "", top50: 28,
+      blurb: "Asian small plates and cocktails. Beef croquettes, Sichuan fried chicken.",
+      tags: ["Small plates", "Cocktails"] },
+
+    { id: "petisco", name: "Petisco Kitchen & Bar", cat: "restaurant", area: "", top50: 31,
+      blurb: "Seasonal seafood and a cocktail list that keeps changing.",
+      tags: ["Seafood", "Bar"] },
+
+    { id: "jamun", name: "Jamun", cat: "restaurant", area: "", top50: 41,
+      blurb: "Indian with a Goan accent — crab kalchi kodi, pork assado.",
+      tags: ["Indian"] },
+
+    { id: "mister-merchants", name: "Mister Merchant's", cat: "restaurant", area: "", top50: 45,
+      blurb: "Saffron chicken cigars, mushroom and truffle baklava, Merchant's mutton curry.",
+      tags: ["Indian"] },
+
+    { id: "for-the-record", name: "For The Record", cat: "cocktail", area: "", top50: 49,
+      blurb: "A vinyl bar — records, cocktails, solkadi feni spritz.",
+      tags: ["Vinyl bar", "Cocktails"] },
+
   ],
 
   /* ---------------------------------------------------------------------

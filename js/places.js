@@ -21,6 +21,7 @@
   var CATS = [
     { id: "all", label: "Everything" },
     { id: "picks", label: "Mitchelle's top Picks" },
+    { id: "top50", label: "India's Top 50" },
     { id: "restaurant", label: "Restaurants" },
     { id: "cafe", label: "Cafés" },
     { id: "dessert", label: "Desserts" },
@@ -41,6 +42,7 @@
         '<span class="place__cat cat-' + p.cat + '">' + U.esc(LABELS[p.cat] || p.cat) + "</span>" +
         (p.topPick ? '<span class="pick">★ Mitchelle\'s top Picks</span>' : "") +
         (p.draft ? '<span class="pill pill--draft">to confirm</span>' : "") +
+        (p.top50 ? '<span class="rank">No. ' + p.top50 + "</span>" : "") +
       "</div>" +
       '<h3 class="place__name">' + U.esc(p.name) + "</h3>" +
       (p.area ? '<p class="place__area">' + U.esc(p.area) + "</p>" : "") +
@@ -54,7 +56,8 @@
 
   function matches(p) {
     if (active === "picks" && !p.topPick) return false;
-    if (active !== "all" && active !== "picks" && p.cat !== active) return false;
+    if (active === "top50" && !p.top50) return false;
+    if (active !== "all" && active !== "picks" && active !== "top50" && p.cat !== active) return false;
     if (!q) return true;
     var hay = [p.name, p.area, p.blurb, (p.tags || []).join(" "), LABELS[p.cat]].join(" ").toLowerCase();
     return hay.indexOf(q) !== -1;
@@ -62,6 +65,7 @@
 
   function render() {
     var list = D.places.filter(matches);
+    if (active === "top50") list = list.slice().sort(function (a, b) { return a.top50 - b.top50; });
     grid.innerHTML = list.length ? list.map(card).join("") :
       '<div class="empty" style="grid-column:1/-1">Nothing matches that. Try “sunset”, “fish” or “Palolem”.</div>';
     countEl.textContent = list.length + " of " + D.places.length + " places";
@@ -88,6 +92,19 @@
       q = searchEl.value.trim().toLowerCase();
       render();
     });
+  }
+
+  var t50 = document.getElementById("top50-list");
+  if (t50) {
+    t50.innerHTML = D.places.filter(function (p) { return p.top50; })
+      .sort(function (a, b) { return a.top50 - b.top50; })
+      .map(function (p) {
+        return '<a class="t50" href="#' + p.id + '">' +
+          '<span class="t50__rank">' + p.top50 + "</span>" +
+          '<span class="t50__name">' + U.esc(p.name) + "</span>" +
+          '<span class="t50__area">' + U.esc(p.area || "Goa") + "</span>" +
+          "</a>";
+      }).join("");
   }
 
   // deep link: places.html#martins

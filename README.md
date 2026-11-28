@@ -77,7 +77,13 @@ Every place has a pin position:
 
 `cat` is one of `restaurant` (blue), `cafe` (gold), `dessert` (clay), `cocktail` (deep blue), `sunset` (orange), `drive` (pale blue), `gaddo` (deep cream). Adding a place automatically gives it a pin, a card on Places, and an entry in the map's list.
 
-Add `topPick: true` to any place and it gets a gold **Mitchelle's top Picks** badge and its own filter on the Places page:
+`topPick: true` gives a place the gold **Mitchelle's top Picks** badge and its own filter. `top50: 6` marks it as No. 6 on India's Top 50 list — it gets a rank badge, appears in the ranked table on the Places page and in the "India's Top 50" filter:
+
+```js
+{ id: "izumi", name: "Izumi Assagao", cat: "restaurant", area: "Assagao", top50: 6, ... }
+```
+
+`topPick: true` on any place also gives it a filter of its own:
 
 ```js
 { id: "martins", name: "Martin's Corner", ... , topPick: true }
